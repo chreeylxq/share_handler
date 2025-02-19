@@ -27,5 +27,5 @@ jobs: # 定义任务
       - run: npm publish 
         working-directory: ./build
         env: 
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
