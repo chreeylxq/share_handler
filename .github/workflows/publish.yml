@@ -22,10 +22,10 @@ jobs: # 定义任务
       - name: Build project #构建项目
         run: npm run build
       - run: |
-          echo "@chreeylxq:https://npm.pkg.github.com/" > build/.npmrc 
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN}}" >> build/.npmrc
+          echo @chreeylxq:https://npm.pkg.github.com/ > build/.npmrc 
+          echo '//npm.pkg.github.com/:_authToken=${secrets.NPM_TOKEN}' >> build/.npmrc
       - run: npm publish 
         working-directory: ./build
         env: 
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
