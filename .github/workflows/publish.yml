@@ -13,7 +13,7 @@ jobs: # 定义任务
     steps: 
       - name: Checkout code # 第一步：拉取代码
         uses: actions/checkout@v4 # 官方 GitHub Action
-      - name: Set up Node.js # 第二步： 设置Node.js 
+      - name: Set up Node.js # 第二步： 设置Node.js  fd
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
