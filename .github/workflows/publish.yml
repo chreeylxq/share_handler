@@ -23,9 +23,9 @@ jobs: # 定义任务
         run: npm run build
       - run: |
           echo @chreeylxq:https://npm.pkg.github.com/ > build/.npmrc 
-          echo '//npm.pkg.github.com/:_authToken=${secrets.NPM_TOKEN}' >> build/.npmrc
-      - run: npm publish 
+          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> build/.npmrc
+      - run: npm publish --registry https://npm.pkg.github.com/
         working-directory: ./build
         env: 
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           
